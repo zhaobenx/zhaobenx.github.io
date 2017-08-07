@@ -12,7 +12,8 @@ github_username:  zhaobenx
 email_username:  zhaobenx@outlook.com
 timezone: Asia/Shanghai
 collections:
-- words_list
+  words_list:
+    output: true
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
