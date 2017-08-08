@@ -70,7 +70,7 @@
 
 <!-- Load KaTeX -->
 <script src="{{ "/js/katex.min.min.js " | prepend: site.baseurl }}"></script>
-
+<script>
 $("script[type='math/tex']").replaceWith(
   function(){
     var tex = $(this).text();
@@ -86,3 +86,4 @@ $("script[type='math/tex; mode=display']").replaceWith(
            katex.renderToString("\\displaystyle "+tex) +
            "</div>";
 });
+</script>
