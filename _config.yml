@@ -29,6 +29,8 @@ google_tracking_id: UA-104203936-1
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
 highlighter: rouge
 permalink: pretty
 paginate: 5
