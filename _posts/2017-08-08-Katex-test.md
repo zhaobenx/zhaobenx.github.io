@@ -4,6 +4,8 @@ title: Katex 公式测试
 comments: true
 ---
 
+* TOC
+{:toc}
 # Katex 测试
 
 行内公式$$ \int u \frac{dv}{dx}\,dx=uv-\int \frac{du}{dx}v\,dx $$ （kramdown 行内公式使用双dollar）
