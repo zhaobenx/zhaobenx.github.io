@@ -9,6 +9,10 @@ body {
   font-size: 20px;
   color: #404040;
 }
+ol.nav-pills {
+    top: 20px;
+    position: fixed;
+}
 p {
   line-height: 1.5;
   margin: 30px 0;

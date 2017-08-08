@@ -4,8 +4,6 @@ title: Katex 公式测试
 comments: true
 ---
 
-* TOC
-{:toc}
 # Katex 测试
 
 行内公式$$ \int u \frac{dv}{dx}\,dx=uv-\int \frac{du}{dx}v\,dx $$ （kramdown 行内公式使用双dollar）
@@ -20,11 +18,11 @@ $$
 \dot{z} & = -\beta z + xy
 \end{aligned}
 $$
-
+{% raw %}
 # gist 内嵌代码测试
 
 {% gist 6706249 %}
-
+{% endraw %}
 # python代码测试
 
 ```python
