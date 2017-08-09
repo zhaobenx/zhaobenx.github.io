@@ -1,4 +1,5 @@
 # Site settings
+
 title: Zhaobenx' blog
 header-img: img/home-bg.jpg
 email: zhaobenx@outlook.com
@@ -32,7 +33,7 @@ markdown: kramdown
 kramdown:
   math_engine: mathjax
 highlighter: rouge
-permalink: pretty
+permalink: /blog/:year/:month/:day/:title 
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 

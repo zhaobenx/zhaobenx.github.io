@@ -5,7 +5,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     <li>
-                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                        <a href="{{ " /feed.xml " | prepend: site.baseurl }}">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -21,8 +21,7 @@
                             </span>
                         </a>
                     </li>
-                    {% endif %}
-                    {% if site.facebook_username %}
+                    {% endif %} {% if site.facebook_username %}
                     <li>
                         <a href="https://www.facebook.com/{{ site.facebook_username }}">
                             <span class="fa-stack fa-lg">
@@ -31,8 +30,7 @@
                             </span>
                         </a>
                     </li>
-                    {% endif %}
-                    {% if site.github_username %}
+                    {% endif %} {% if site.github_username %}
                     <li>
                         <a href="https://github.com/{{ site.github_username }}">
                             <span class="fa-stack fa-lg">
@@ -41,8 +39,7 @@
                             </span>
                         </a>
                     </li>
-                    {% endif %}
-                    {% if site.email_username %}
+                    {% endif %} {% if site.email_username %}
                     <li>
                         <a href="mailto:{{ site.email_username }}">
                             <span class="fa-stack fa-lg">
@@ -60,33 +57,37 @@
 </footer>
 
 <!-- jQuery -->
-<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/jquery.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
 
 
 {% if page.layout == 'post' %}
 <!-- Load KaTeX -->
-<script src="{{ "/js/katex.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/katex.min.js " | prepend: site.baseurl }}"></script>
 <script>
-$("script[type='math/tex']").replaceWith(
-  function(){
-    var tex = $(this).text();
-    return "<span class=\"inline-equation\">" + 
-           katex.renderToString(tex) +
-           "</span>";
-});
+    $("script[type='math/tex']").replaceWith(
+        function() {
+            var tex = $(this).text();
+            return "<span class=\"inline-equation\">" +
+                katex.renderToString(tex) +
+                "</span>";
+        });
 
-$("script[type='math/tex; mode=display']").replaceWith(
-  function(){
-    var tex = $(this).html();
-    return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
-});
+    $("script[type='math/tex; mode=display']").replaceWith(
+        function() {
+            var tex = $(this).html();
+            return katex.renderToString(tex.replace(/%.*/g, ''), {
+                displayMode: true
+            });
+        });
 </script>
+<script src="{{ " /js/application.min.js " | prepend: site.baseurl }}"></script>
 
-{% include sidebar.html %}
+<script src="{{ "/js/docs.min.js" | prepend: site.baseurl }}"></script>
+
 {% endif %}
