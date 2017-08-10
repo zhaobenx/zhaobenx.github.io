@@ -2,7 +2,7 @@
 layout: post
 title: Katex 公式测试
 comments: true
-tag: ["Test","katex","Comment"]
+tag: ["Test","katex","Comment","tags","Code inline","gist"]
 ---
 
 # Katex 测试
