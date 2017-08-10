@@ -64,10 +64,13 @@ var BlogDirectory = {
                 return false;
             }
 
-            var nodes = article_body_element.find("h1,h2,h3");
+            var nodes = article_body_element.find("h1,h2");
             var ulSideNav = side_nav_element;
-
+            var lastlevel = 0;
+            var level = 0;
+            var html = "";
             $.each(nodes, function() {
+                    lastlevel = level;
                     var $this = $(this);
 
                     var nodetext = $this.text();
@@ -122,8 +125,8 @@ var BlogDirectory = {
                 html += "</li></li></ul>"
             }
             //console.log(html);
-            ulSideNav.append(html); // end of each
-
+            html += "</br><a href=\"#top\">Back to top</a>"
+            ulSideNav.append(html);
         } //end of createBlogDirectory:function()
 
 };
