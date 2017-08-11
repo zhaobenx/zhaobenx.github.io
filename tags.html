@@ -10,10 +10,10 @@ order: 2
     <div class="row">
         <div class="col-lg-8 col-md-10">
             {% assign tags_list = site.tags %} {% if tags_list.first[0] == null %} {% for tag in tags_list %}
-            <a class="btn btn-default btn-sm" href="#{{ tag }}-ref" role="button">{{ tag }}  <span>   - {{ site.tags[tag].size }}</span></a> {% endfor %} {% else %} {% for tag in tags_list %}
-            <a class="btn btn-default btn-sm" href="#{{ tag[0] }}-ref" role="button">{{ tag[0] }} <span>   - {{ tag[1].size }}</span></a> {% endfor %} {% endif %} {% for tag in site.tags %}
+            <a class="btn btn-default btn-sm" href="#{{ tag }}-ref" role="button"><i class="fa fa-tag"></i> {{ tag }}  <span>   - {{ site.tags[tag].size }}</span></a> {% endfor %} {% else %} {% for tag in tags_list %}
+            <a class="btn btn-default btn-sm" href="#{{ tag[0] }}-ref" role="button"><i class="fa fa-tag"></i> {{ tag[0] }} <span>   - {{ tag[1].size }}</span></a> {% endfor %} {% endif %} {% for tag in site.tags %}
             <hr>
-            <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
+            <i class="fa fa-tag"><a id="{{ tag[0] }}-ref">&nbsp; {{ tag[0] }}</a></i>
             <ul>
                 {% for node in tag[1] %} {% if node.title != null %} {% if group == null or group == node.group %} {% if page.url == node.url %}
                 <li class="active"><a href="{{ BASE_PATH }}{{ node.url }}" class="active">{{ node.title }}</a></li>
