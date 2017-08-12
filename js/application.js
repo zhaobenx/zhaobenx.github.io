@@ -125,7 +125,7 @@ var BlogDirectory = {
                 html += "</li></li></ul>"
             }
             //console.log(html);
-            html += "</br><a href=\"#top\">Back to top</a>"
+            html += "</br><a href=\"#top\" class=\"back-to-top\"> Back to top </a>"
             ulSideNav.append(html);
         } //end of createBlogDirectory:function()
 
