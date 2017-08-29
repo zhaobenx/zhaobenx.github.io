@@ -2,7 +2,7 @@
 layout: page
 title: "About"
 description: "This is what I do."
-header-img: "img/about-bg.jpg"
+background: "about-bg"
 order: 4
 ---
 
