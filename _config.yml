@@ -12,17 +12,7 @@ github_username:  zhaobenx
 #facebook_username:  StartBootstrap
 email_username:  zhaobenx@outlook.com
 timezone: Asia/Shanghai
-collections:
-  words_list:
-    output: true
-    
-defaults:
-  - scope:
-      path: ""
-      type: words_list
-    values:
-      layout: page
-      words: true
+
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
