@@ -70,63 +70,64 @@ var BlogDirectory = {
             var level = 0;
             var html = "";
             $.each(nodes, function() {
-                    lastlevel = level;
-                    var $this = $(this);
+                lastlevel = level;
+                var $this = $(this);
 
-                    var nodetext = $this.text();
-                    // There maybe HTML tags in header inner text, use regex to erase them
-                    nodetext = nodetext.replace(/<\/?[^>]+>/g, "");
-                    nodetext = nodetext.replace(/&nbsp;/ig, "");
+                var nodetext = $this.text();
+                // There maybe HTML tags in header inner text, use regex to erase them
+                nodetext = nodetext.replace(/<\/?[^>]+>/g, "");
+                nodetext = nodetext.replace(/&nbsp;/ig, "");
 
-                    // btw: Jekyll generates id for each header.
-                    var nodeid = $this.attr("id");
-                    if (!nodeid) {
-                        nodeid = "top";
-                    }
+                // btw: Jekyll generates id for each header.
+                var nodeid = $this.attr("id");
+                if (!nodeid) {
+                    nodeid = "top";
+                }
 
-                    var item_a = "<a href=\"#" + nodeid + "\">" + nodetext + "</a>";
-                    /*$("<a></a>");
-                    item_a.attr("href", "#" + nodeid);
-                    item_a.text(nodetext);*/
+                var item_a = "<a href=\"#" + nodeid + "\">" + nodetext + "</a>";
+                /*$("<a></a>");
+                item_a.attr("href", "#" + nodeid);
+                item_a.text(nodetext);*/
 
-                    var ret_li;
-                    switch ($this.get(0).tagName) {
-                        case "H1":
-                            level = 1;
-                            if (lastlevel == 0) {
-                                ret_li = "<li>";
-                            } else if (lastlevel == 1) {
-                                ret_li = "</li><li>"
-                            } else if (lastlevel == 2) {
-                                ret_li = "</li></li></ul><li>"
-                            }
-                            break;
-                        case "H2":
-                            level = 2;
-                            if (lastlevel == 0) {
-                                ret_li = "<li><ul class=\"nav\"><li>";
-                            } else if (lastlevel == 1) {
-                                ret_li = "<ul class=\"nav\"><li>"
-                            } else if (lastlevel == 2) {
-                                ret_li = "</li><li>"
-                            }
-                            break;
-                    }
-                    ret_li += item_a;
-                    if (!ret_li) {
-                        // do nothing
-                    } else {
-                        html += ret_li;
-                    }
-                }) // end of each
+                var ret_li;
+                switch ($this.get(0).tagName) {
+                    case "H1":
+                        level = 1;
+                        if (lastlevel == 0) {
+                            ret_li = "<li>";
+                        } else if (lastlevel == 1) {
+                            ret_li = "</li><li>"
+                        } else if (lastlevel == 2) {
+                            ret_li = "</li></li></ul><li>"
+                        }
+                        break;
+                    case "H2":
+                        level = 2;
+                        if (lastlevel == 0) {
+                            ret_li = "<li><ul class=\"nav\"><li>";
+                        } else if (lastlevel == 1) {
+                            ret_li = "<ul class=\"nav\"><li>"
+                        } else if (lastlevel == 2) {
+                            ret_li = "</li><li>"
+                        }
+                        break;
+                }
+                ret_li += item_a;
+                if (!ret_li) {
+                    // do nothing
+                } else {
+                    html += ret_li;
+                }
+            }) // end of each
             if (lastlevel == 1) {
-                html += "</li>"
+                html += "</li>";
             } else if (lastlevel == 2) {
-                html += "</li></li></ul>"
+                html += "</li></li></ul>";
             }
             //console.log(html);
-            html += "</br><a href=\"#top\" class=\"back-to-top\"> Back to top </a>"
+            var toTop = "</br><a href=\"#top\" class=\"back-to-top\"> Back to top </a>";
             ulSideNav.append(html);
+            ulSideNav.after(toTop);
         } //end of createBlogDirectory:function()
 
 };
