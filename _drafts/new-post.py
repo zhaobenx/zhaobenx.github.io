@@ -18,7 +18,7 @@ def main():
     tag = input("请输入标签 可为空:\n").split()
     #date = time.strftime("%Y-%m-%d-", time.localtime())
     date = ''
-    with open(date+file_name.replace(' ','-').replace('　','-') + ".md","w",encoding='utf8') as file:
+    with open(date+file_name.replace(' ','-').replace('　','-').rstrip('-') + ".md","w",encoding='utf8') as file:
         file.write(template.format(title=title,tag=tag))
 
     print("Done! Enjoy your writing!")
