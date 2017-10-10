@@ -1,26 +1,35 @@
 import time
 import os
-import 
-## TODO:
-# 1. loop to select post to publish
-# 2. add date to the published post 
+# TODO:
+# 1. loop to select post to publish -done
+# 2. add date to the published post -done
+
+
 def main():
+
+    post_extension = ('.md', '.markdown', '.html')
+    
     
     date = time.strftime("%Y-%m-%d-", time.localtime())
-    #with open(date+file_name.replace(' ','-').replace('　','-') + ".md","w",encoding='utf8') as file:
-    #    file.write(template.format(title=title,tag=tag))
-
-    #print("Done! Enjoy your writing!")
-    post_extension = ('.md','.markdown','.html')
-    posts = [f for f in os.listdir() if f.endswith(post_extension) ]
+    posts = [f for f in os.listdir() if f.endswith(post_extension)]
 
     if not os.path.isdir('../_posts'):
         os.makedirs('../_posts')
-    for post in posts:
-        print
-       
-    os.rename('')
-    input()
+
+    print("All post:\n")
+    for i, post in enumerate(posts):
+        print('[{}]'.format(i), '\t', post)
+
+    num = input("Please input the post number(like 1):\n")
+    try:
+        post = posts[int(num)]
+    except Exception as e:
+        print("Wrong number")
+        # print(e)
+    else:
+        os.rename(post, '../_posts/' + date + post)
+        # print(post)
+        input("Successful")
 
 
 if __name__ == "__main__":
