@@ -22,7 +22,7 @@ comments: true
 
 打开CMake-gui，在第一栏输入OpenCV源码位置，第二栏选择编译后目录，可以选择如图所示OpenCV/build-debug或OpenCV/build
 
-![CMake-screenshot-1](../img/CMake-screenshot-1.jpg)
+![CMake-screenshot-1](/img/CMake-screenshot-1.jpg)
 
 点击`Configure`，Makefile格式选择`MinGW Makefile`编译器选择默认，之后需要等待一段时间。
 
