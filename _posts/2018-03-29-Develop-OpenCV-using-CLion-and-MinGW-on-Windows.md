@@ -1,8 +1,16 @@
 ---
 layout: post
 title: Windows下使用CLion和MinGW进行OpenCV开发
-tag: ['技术', '编译', 'C++', 'OpenCV', 'CLion', 'MinGW', 'CMake']
+tag:
+  - 技术
+  - 编译
+  - C++
+  - OpenCV
+  - CLion
+  - MinGW
+  - CMake
 comments: true
+published: true
 ---
 
 # 所需软件
@@ -61,14 +69,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 FIND_PACKAGE(OpenCV REQUIRED)
 
-# 可以不加
-include_directories(E:/opencv/modules/features2d/src)
-
 add_executable(playopencv1 main.cpp)
 
 
-
-include_directories(${OpenCV_INCLUDE_DIRS})
 # 添加需要的库名字
 set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs opencv_xfeatures2d)
 
