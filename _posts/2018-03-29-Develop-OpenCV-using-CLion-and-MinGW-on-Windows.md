@@ -13,20 +13,20 @@ comments: true
 published: true
 ---
 
-# 所需软件
+## 所需软件
 
 *   Git
 *   CMake
 *   MinGW-w64
 *   CLion
 
-# 安装步骤
+## 安装步骤
 
-## 下载源码
+### 下载源码
 
 使用Git从Github官方库[OpenCV](https://github.com/OpenCV/OpenCV)下载源码，注若需要使用SIFT和SURF等收费模块需另外从[OpenCV_contrib](https://github.com/OpenCV/OpenCV_contrib)。
 
-## 配置CMake
+### 配置CMake
 
 打开CMake-gui，在第一栏输入OpenCV源码位置，第二栏选择编译后目录，可以选择如图所示OpenCV/build-debug或OpenCV/build
 
@@ -42,28 +42,28 @@ published: true
 
 设置完毕后再次点击`Configure`成功后再点`Generate`即可。
 
-## 编译
+### 编译
 
 命令行打开所配置的build目录，输入`mingw32-make -j4 install`进行编译，跟剧硬件配置将花费不同的时间，在我笔记本上花了大概30分钟，选项的`-j4`跟剧电脑核心数选择，即八核可以选择`-j8`。
 
-## 环境变量配置
+### 环境变量配置
 
 打开环境变量配置，在path一项添加`E:\opencv\build-debug\install\x64\mingw\bin`，具体目录取决于编译目录。
 
 之后重启电脑使环境变量生效。
 
-## CLion设置
+### CLion设置
 
 新建CLion项目，将`CMakeLists.txt`内容写作：
 
 ```cmake
 cmake_minimum_required(VERSION 3.9)
-# 你的项目名称
+## 你的项目名称
 project(playopencv1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-# OpenCV目录
+## OpenCV目录
 set(OpenCV_DIR "E:\\opencv\\build-debug")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
@@ -72,10 +72,10 @@ FIND_PACKAGE(OpenCV REQUIRED)
 add_executable(playopencv1 main.cpp)
 
 
-# 添加需要的库名字
+## 添加需要的库名字
 set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs opencv_xfeatures2d)
 
-# linking
+## linking
 target_link_libraries(playopencv1 ${OpenCV_LIBS})
 
 ```
