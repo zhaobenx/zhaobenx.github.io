@@ -74,9 +74,9 @@
         function() {
             var tex = $(this).text();
             return "<span class=\"inline-equation\">" +
-                katex.renderToString(tex) +
+                katex.renderToString(tex.replace(/%.*/g, '').replace(String.fromCharCode(8203),'')) +
                 "</span>";
-        });
+        }); 
 
     $("script[type='math/tex; mode=display']").replaceWith(
         function(){
