@@ -32,7 +32,7 @@ comments: true
 
 其中**Harris**角点的响应函数定义为：
 $$
-R=det \boldsymbol{M} - \alpha(trace\boldsymbol{M})^2
+R=det \textbf{M} - \alpha(trace\textbf{M})^2
 $$
 (其中 $det$指的是矩阵行列式的值；值得指的是矩阵的迹，即对角线元素之和；$M$指的是像素矩阵)
 
@@ -171,13 +171,13 @@ HarrisResponses(const Mat& img, const std::vector<Rect>& layerinfo,
 }
 ```
 
-代码最后几行即为计算我们公式(1)的具体计算，其中用到了这样的公式,即在矩阵$\boldsymbol{M}=\begin{bmatrix}A&C\\C&B\end{bmatrix}$中：
+代码最后几行即为计算我们公式(1)的具体计算，其中用到了这样的公式,即在矩阵$\textbf{M}=\begin{bmatrix}A&C\\C&B\end{bmatrix}$中：
 $$
-det\boldsymbol{M} = \lambda_1\lambda_2=AB-C^2
+det\textbf{M} = \lambda_1\lambda_2=AB-C^2
 $$
 
 $$
-trace\boldsymbol{M}=\lambda_2+\lambda_2=A+B
+trace\textbf{M}=\lambda_2+\lambda_2=A+B
 $$
 
 ### 旋转不变性
