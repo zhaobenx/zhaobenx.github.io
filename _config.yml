@@ -33,7 +33,7 @@ kramdown:
   #     line_numbers: true
   #     start_line: 1
 #highlighter: rouge
-permalink: /blog/:year/:title 
+permalink: /:year/:title 
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","Gemfile","Gemfile.lock","*.bak"]
 
