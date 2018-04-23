@@ -173,7 +173,8 @@ HarrisResponses(const Mat& img, const std::vector<Rect>& layerinfo,
 }
 ```
 
-代码最后几行即为计算我们公式(1)的具体计算，其中用到了这样的公式,即在矩阵$$\textbf{M}=\begin{bmatrix}A&C\\ C&B\end{bmatrix}$$中：
+代码最后几行即为计算我们公式(1)的具体计算，其中用到了这样的公式,即在矩阵$\textbf{M}=\begin{bmatrix}A&C\\ C&B\end{bmatrix}$中：
+
 $$
 det\textbf{M} = \lambda_1\lambda_2=AB-C^2
 $$
