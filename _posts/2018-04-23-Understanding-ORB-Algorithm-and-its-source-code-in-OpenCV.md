@@ -14,7 +14,7 @@ comments: true
 是ORB特征是将**FAST**特征点的检测方法与**BRIEF**特征描述子结合起来，并在它们原来的基础上做了改进与优化。
 
 1.  利用**FAST**特征点检测的方法来检测特征点。
-2.  利用**Harris**角点的度量方法，从**FAST**特征点从挑选出Harris角点响应值最大的$N$个特征点。
+2.  利用**Harris**角点的度量方法，从**FAST**特征点从挑选出Harris角点响应值最大的$$N$$个特征点。
 3.  解决局部不变性（尺度不变性和旋转不变性），即选择从不同高斯金字塔进行检测和对特征点添加角度特征。
 4.  为特征点增加特征描述即描述子。
 
@@ -34,7 +34,7 @@ comments: true
 $$
 R=det \textbf{M} - \alpha(trace\textbf{M})^2
 $$
-(其中 $det$指的是矩阵行列式的值；值得指的是矩阵的迹，即对角线元素之和；$M$指的是像素矩阵)
+(其中 $$det$$指的是矩阵行列式的值；值得指的是矩阵的迹，即对角线元素之和；$$M$$指的是像素矩阵)
 
 ### 旋转不变性
 
@@ -51,7 +51,7 @@ $$
 \theta = arctan(m_{01},m_{10})
 $$
 
-其中$M_{pq}$的定义是在以特征点为中心的一个园内，对所有像素值（以灰度为单位）以x，y坐标为权进行的加权和。即算出像素的“重心”。从而可利用*公式(4)*来计算出特征点的方向。
+其中$$M_{pq}$$的定义是在以特征点为中心的一个园内，对所有像素值（以灰度为单位）以x，y坐标为权进行的加权和。即算出像素的“重心”。从而可利用*公式(4)*来计算出特征点的方向。
 
 ### 描述子计算
 
@@ -67,13 +67,15 @@ $$
 $$
 S_{\theta} = R_{\theta}S
 $$
-其中的$S$为选取的点对（$x_n$与$y_n$是一个点对两个点的灰度值），$R_{\theta}$为旋转不变性（公式（4））求得的旋转角度。
+其中的$$S$$为选取的点对（$$x_n$$与$$y_n$$是一个点对两个点的灰度值），$$R_{\theta}$$为旋转不变性（公式（4））求得的旋转角度。
+
 $$
-S =\begin{pmatrix}x_1&x_2&\cdots&x_{2n} \\ y_1&y_2&\cdots&y_{2n}\end{pmatrix}
+S =\begin{pmatrix}x_1&x_2&\cdots&x_{2n} \\
+y_1&y_2&\cdots&y_{2n}\end{pmatrix}
 $$
 
 $$
-R_{\theta} = \begin{bmatrix}cos\theta & sin\theta \\ –sin\theta &cos\theta\end{bmatrix}
+R_{\theta} = \begin{bmatrix} cos \theta & sin \theta \\ -sin \theta & cos \theta \end{bmatrix}
 $$
 
 ### 匹配
@@ -171,7 +173,7 @@ HarrisResponses(const Mat& img, const std::vector<Rect>& layerinfo,
 }
 ```
 
-代码最后几行即为计算我们公式(1)的具体计算，其中用到了这样的公式,即在矩阵$\textbf{M}=\begin{bmatrix}A&C\\C&B\end{bmatrix}$中：
+代码最后几行即为计算我们公式(1)的具体计算，其中用到了这样的公式,即在矩阵$$\textbf{M}=\begin{bmatrix}A&C\\ C&B\end{bmatrix}$$中：
 $$
 det\textbf{M} = \lambda_1\lambda_2=AB-C^2
 $$

@@ -81,9 +81,9 @@
     $("script[type='math/tex; mode=display']").replaceWith(
         function(){
             var tex = $(this).text();
-             return "<div class=\"equation\">" + 
-                    katex.renderToString("\\displaystyle "+tex) +
-                    "</div>";
+            return katex.renderToString(tex.replace(/%.*/g, ''), {
+                displayMode: true
+            });
         });
 </script>
 <script src="{{ " /js/application.min.js " | prepend: site.baseurl }}"></script>
