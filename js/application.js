@@ -64,7 +64,7 @@ var BlogDirectory = {
                 return false;
             }
 
-            var nodes = article_body_element.find("h1,h2");
+            var nodes = article_body_element.find("h2,h3");
             var ulSideNav = side_nav_element;
             var lastlevel = 0;
             var level = 0;
@@ -91,7 +91,7 @@ var BlogDirectory = {
 
                 var ret_li;
                 switch ($this.get(0).tagName) {
-                    case "H1":
+                    case "H2":
                         level = 1;
                         if (lastlevel == 0) {
                             ret_li = "<li>";
@@ -101,7 +101,7 @@ var BlogDirectory = {
                             ret_li = "</li></li></ul><li>"
                         }
                         break;
-                    case "H2":
+                    case "H3":
                         level = 2;
                         if (lastlevel == 0) {
                             ret_li = "<li><ul class=\"nav\"><li>";
