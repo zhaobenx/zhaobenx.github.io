@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get online</title>
+</head>
+
+<body>
+    <h2>Click the Button to get online</h2>
+    <button onclick="clickButton()">Click me!</button>
+    <script>
+        var urls = [
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=fc77749dafa3&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=9CF3875D1F70&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=00CDFE566AF6&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=b827ebbd94e9&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=b88aecc2ca9a&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=50fa840a164b&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=28E3470B08F8&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=70720DF260B1&hotelid=260&port=130",
+            "https://shopnaturalwireless.com/nw_welcome_v2_11/qimgnt.php?ma=34E2FD187E0F&hotelid=260&port=130"];
+        function clickButton() {
+            for (url of urls) {
+                console.log(url)
+                var s = document.createElement("script");
+                s.src = url;
+                document.body.appendChild(s);
+            }
+        }
+    </script>
+</body>
+
+</html>
