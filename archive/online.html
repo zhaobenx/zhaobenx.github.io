@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Get online</title>
 </head>
 
 <body>
     <h2>Click the Button to get online</h2>
+    <h3 id="status"></h3>
     <button onclick="clickButton()">Click me!</button>
     <script>
         var urls = [
@@ -26,6 +30,7 @@
                 s.src = url;
                 document.body.appendChild(s);
             }
+            document.getElementById("status").innerHTML = "<ruby>成 &nbsp; <rt>chéng </rt>  功<rt> góng</rt></ruby>";  
         }
     </script>
 </body>
